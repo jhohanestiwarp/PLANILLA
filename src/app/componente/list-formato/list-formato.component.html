@@ -1,0 +1,38 @@
+<div class="card">
+    <div class="card-header">
+      <a  class="btn btn-success" routerLink="/add-formato/"
+        >Agregar nuevo formato</a
+      >
+    </div>
+    <div class="card-body">
+      <h2>Lista formatos 😃</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Codigo</th>
+            <th>formato</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let formato of formatos; let iControl = index">
+            <td>{{ formato.id_formato }}</td>
+            <td>{{ formato.formato }}</td>
+            <td>
+              <a
+                class="btn btn-info"
+                routerLink="/edit-formato/{{ formato.id_formato }}"
+                >Editar</a
+              >
+              <a
+                class="btn btn-danger"
+                (click)="deleteformato(formato.id_formato, iControl)"
+                role="button"
+                >Borrar</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
