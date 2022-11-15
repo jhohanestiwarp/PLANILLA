@@ -1,6 +1,7 @@
+<div class="container">
 <div class="card">
   <div class="card-header">
-    Registrar formato
+    <!-- Solicitud formato 😎 -->
   </div>
   <div class="card-body">
     <form ngNativeValidate [formGroup]="formformato" (ngSubmit)="enviarDatos()">
@@ -9,17 +10,18 @@
      <input required type="text"
        class="form-control" name="" id="" formControlName="semana_correspondiente" aria-describedby="helpId" placeholder="ingrese semana correspondiente">
 
-       <input required type="text"
+       <input required type="date"
        class="form-control" name="" id="" formControlName="fecha" aria-describedby="helpId" placeholder="Ingrece fecha">
        <input required type="text"
        class="form-control" name="" id="" formControlName="dia_solicitado" aria-describedby="helpId" placeholder="escriba el dia solicitado">
-       <input required type="date"
+       <input required type="text"
        class="form-control" name="" id="" formControlName="cedula" aria-describedby="helpId" placeholder="Ingrece la cedula">
-       <input required type="text"
+       <input required type="time"
        class="form-control" name="" id="" formControlName="hora_inicio" aria-describedby="helpId" placeholder="Escribe la hora inicio">
-       <input required type="text"
+       <input required type="time"
        class="form-control" name="" id="" formControlName="hora_fin" aria-describedby="helpId" placeholder="Escribe la hora fin">
   
+       
    </div>
 
    <div class="btn-group" role="group" aria-label="">
@@ -27,4 +29,5 @@
       <button type="button" routerLink="/list-formato/" class="btn btn-primary">Cancelar</button>
     </div>
   </form>
+</div>
 </div>

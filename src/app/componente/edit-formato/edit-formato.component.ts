@@ -9,56 +9,52 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./edit-formato.component.css']
 })
 export class EditformatoComponent implements OnInit {
-  formformato:FormGroup= this.formulario.group({
-    fecha:"",
-    dia_solicitado:"",
-    cedula:"",
-    hora_inicio:"",
-    hora_fin:""
-  })
-  id: string =""
+  formformato:FormGroup;
+  elID:any;
   constructor(public formulario:FormBuilder,
     private formatoService:formatoService,
     private ruteador:Router,
     private activedRoute:ActivatedRoute ) {
-      const idParam =this.activedRoute.snapshot.paramMap.get('id');
+      this.elID=this.activedRoute.snapshot.paramMap.get('id_formato');
+     
 
-      if (idParam === null) {
-        return // redirecciona a la vista de listado
-      }
-
-      this.id = idParam;
-
-      this.formatoService.Obtenerformato(this.id).subscribe(result =>{
+      this.formatoService.Obtenerformato(this.elID).subscribe(result =>{
         console.log(result);
         this.formformato.setValue({
-          formato:result['formato'],
+          id_cargo:result['id_cargo'],
+          id_rol:result['id_rol'],
+          id_carga_formato:result['id_carga_formato'],
+          id_tipo_documento:result['id_tipo_documento'],
+          
+          
         });
       }
       );
+  
       this.formformato = this.formulario.group(
         {
-          formato:[''],
+    
+          id_cargo:[''],
+          id_rol:[''],
+          id_carga_formato:[''],
+          id_tipo_documento:['']
+
         }
       );
   
      }
 
   ngOnInit(): void {
+    console.log(this.elID);
   }
 
-  // enviarDatos():any {
-  //   console.log(this.formformato.value)
-  //   this.formatoService.Updateformato({ 
-  //     id: this.id,
-  //     formato: this.formformato.value.formato as string
-  //   }).subscribe(result=>{
-  //     alert("Registro MODIFICADO con exito");  
-  //     this.ruteador.navigateByUrl('/list-formato');
-  //   });
-    
+  enviarDatos():any {
+    console.log
+    this.formatoService.Updateformato({id_formato:this.elID,...this.formformato.value}).subscribe(result=>{
+      alert("Modificar con exito");
+      this.ruteador.navigateByUrl('/list-formato');
+    });
 
-  // }
+  }
 
 }
-
