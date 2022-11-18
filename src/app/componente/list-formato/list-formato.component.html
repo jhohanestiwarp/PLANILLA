@@ -11,12 +11,12 @@
       <thead>
         <tr>
           <th>Codigo</th>
-          <th>semana_correspondiente</th>
+          <th>semana correspondiente</th>
           <th>fecha</th>
           <th>dia solicitado </th>
           <th>cedula</th>
-          <th>hora_inicio</th>
-          <th>hora_fin</th>
+          <th>hora inicio</th>
+          <th>hora fin</th>
         </tr>
       </thead>
       <tbody>
@@ -29,8 +29,9 @@
           <td>{{formato.hora_inicio}}</td>
           <td>{{formato.hora_fin}}</td>
           <td>
-
-          </td>
+            <!-- <a   class="btn btn-info" routerLink="/edit-persona/{{formato.id}}">Editar</a> -->
+           <a   class="btn btn-danger" (click)=" deleteformato(formato.id,iControl)" role="button">Borrar</a> 
+         </td>
         </tr>
 
       </tbody>

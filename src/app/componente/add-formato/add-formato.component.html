@@ -1,23 +1,32 @@
+
 <div class="container">
+  
 <div class="card">
+  <h1>   Solicitud de formato </h1>
+ 
   <div class="card-header">
     <!-- Solicitud formato 😎 -->
   </div>
   <div class="card-body">
     <form ngNativeValidate [formGroup]="formformato" (ngSubmit)="enviarDatos()">
    <div class="mb-3">
-     <label for="" class="form-label">formato</label>
+     <!-- <label for="" class="form-label">formato</label> -->
+     <h6>Ingrese semana correspondiente </h6>
      <input required type="text"
-       class="form-control" name="" id="" formControlName="semana_correspondiente" aria-describedby="helpId" placeholder="ingrese semana correspondiente">
-
+       class="form-control" name="" id="" formControlName="semana_correspondiente" aria-describedby="helpId" placeholder="EJE: De la semana 1 del mes 2 a la semana 2">
+       <h6>Ingrece fecha </h6>
        <input required type="date"
        class="form-control" name="" id="" formControlName="fecha" aria-describedby="helpId" placeholder="Ingrece fecha">
+       <h6>Escriba el dia solicitado</h6> 
        <input required type="text"
-       class="form-control" name="" id="" formControlName="dia_solicitado" aria-describedby="helpId" placeholder="escriba el dia solicitado">
+       class="form-control" name="" id="" formControlName="dia_solicitado" aria-describedby="helpId" placeholder="EJE: Martes">
+       <h6>Ingrece cedula del solicitante </h6>
        <input required type="text"
-       class="form-control" name="" id="" formControlName="cedula" aria-describedby="helpId" placeholder="Ingrece la cedula">
+       class="form-control" name="" id="" formControlName="cedula" aria-describedby="helpId" placeholder="EJE: 542417729">
+       <h6>Selecione hora inicio</h6>
        <input required type="time"
        class="form-control" name="" id="" formControlName="hora_inicio" aria-describedby="helpId" placeholder="Escribe la hora inicio">
+       <h6>Selecione hora fin </h6>
        <input required type="time"
        class="form-control" name="" id="" formControlName="hora_fin" aria-describedby="helpId" placeholder="Escribe la hora fin">
   
@@ -30,4 +39,7 @@
     </div>
   </form>
 </div>
+</div>
+
+<div>
 </div>
